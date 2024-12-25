@@ -1,0 +1,17 @@
+<<<<<<< HEAD
+{"website_name":"\u0643\u0627\u0641\u064a BG","tax_no":"123123123123123","address":"asdasdasdasdasd","building_no":"123123222","logo_img":null,"icon_img":null,"street":"123123123","phone":"123123123","active_tax":true,"logo":"settings\/16683761254.jpg","icon":"settings\/1665047906\u0642\u0645\u0631.jpg","tax":"15"}
+=======
+{"website_name":"\u0643\u0627\u0634\u064a\u0631",
+"tax_no":"123123123123123",
+"address":"asdasdasdasdasd",
+"building_no":"123123222",
+"logo_img":null,
+"icon_img":null,
+"street":"123123123",
+"phone":"123123123",
+"active_tax":true,
+"logo":"settings\/16683650578a6436924a.jpg",
+"icon":"settings\/1665047906\u0642\u0645\u0631.jpg",
+"tax":"10",
+"capital":"5000"}
+>>>>>>> 690b2a64a703b5226ed30d6d3d693ebaa1078059

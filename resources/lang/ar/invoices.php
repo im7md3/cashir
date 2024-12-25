@@ -1,0 +1,5 @@
+<?php
+
+return [
+    'invoices' => 'المبيعات',
+];

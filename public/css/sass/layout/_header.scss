@@ -1,0 +1,333 @@
+// Top Nav Bar
+.top-nav {
+    background-color: $main-color;
+    color: white;
+    font-size: 13px;
+    z-index: 1000;
+    .container {
+        display: flex;
+        align-items: center;
+        // justify-content: flex-end;
+        position: relative;
+        .hid-div {
+            visibility: hidden;
+        }
+        .tog-show {
+            margin: 10px 0;
+            display: none;
+            cursor: pointer;
+            @include maxWidth(md) {
+                display: block;
+            }
+            i,
+            svg {
+                font-size: 23px;
+            }
+        }
+        ul {
+            @include ul-reset;
+        }
+        a {
+            color: white;
+            font-size: 13px;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            @include maxWidth(md) {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                min-width: 200px;
+                display: none;
+                right: 0;
+                background-color: $bg-dark;
+                li {
+                    width: 100%;
+                    a {
+                        border-bottom: 1px solid $grey-color;
+                        width: 100%;
+                        transition: $transition;
+                        &::before {
+                            display: none;
+                        }
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+            li a {
+                padding: 0.7rem;
+                display: block;
+                overflow: hidden;
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 100%;
+                    left: 100%;
+                    bottom: 3px;
+                    transition: $transition;
+                    position: absolute;
+                    height: 3px;
+                    background-color: white;
+                }
+                &:hover::before {
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+// Bottom Nav Bar
+.bottom-nav {
+    box-shadow: 0 5px 10px 0 $color-box-shadow;
+    border-bottom: 3px solid $main-color;
+    background-color: white;
+    z-index: 1000;
+    .container {
+        .tog-show {
+            display: none;
+            cursor: pointer;
+            @include maxWidth(lg) {
+                display: inline-block;
+                margin: 10px 0;
+            }
+            i,
+            svg {
+                font-size: 23px;
+                color: black;
+            }
+        }
+        .list-item {
+            display: flex;
+            z-index: 111;
+            align-items: center;
+            @include ul-reset;
+            @include maxWidth(lg) {
+                flex-direction: column;
+                display: none;
+            }
+            li .item {
+                padding: 1rem 0.7rem;
+                display: block;
+                transition: $transition;
+                color: black;
+                font-size: 13px;
+                white-space: nowrap;
+                position: relative;
+                .badge-count {
+                    position: absolute;
+                    left: 0px;
+                    top: 13%;
+                }
+                .i-item {
+                    transition: $transition;
+                    color: $greey-blue;
+                    font-size: 16px;
+                    margin-right: 2px;
+                }
+                &:hover {
+                    color: $main-color;
+                    i,
+                    svg {
+                        color: $main-color;
+                    }
+                }
+                &.active {
+                    color: $main-color;
+                    i,
+                    svg {
+                        color: $main-color;
+                    }
+                }
+            }
+            li .dropdown-hover {
+                display: flex;
+            }
+        }
+    }
+}
+
+// in mobile
+.top-nav-mob {
+    position: fixed;
+    left: 0;
+    height: 62px;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: white;
+    .nav-content {
+        @include centering;
+        justify-content: space-between;
+        .navbar {
+            width: 100%;
+            gap: 13px;
+            .navbar-toggler {
+                border: none;
+                padding: 0;
+                &:focus {
+                    box-shadow: none !important;
+                }
+            }
+            .offcanvas {
+                width: 290px;
+                .offcanvas-body {
+                    .navbar-nav {
+                        position: relative;
+                        &:not(:last-child) {
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                bottom: -21px;
+                                left: 0;
+                                width: 100%;
+                                height: 1px;
+                                background-color: #d5d5d5;
+                            }
+                        }
+                        .nav-item {
+                            &.nav-img {
+                                margin-bottom: 15px;
+                                img {
+                                    margin-bottom: 10px;
+                                    @include circle(75px);
+                                    object-fit: cover;
+                                }
+                                h5,
+                                h6 {
+                                    font-weight: 700;
+                                }
+                                h6 {
+                                    color: $main-color;
+                                }
+                            }
+                            .nav-link {
+                                &:hover {
+                                    background-color: #f3f3f3 !important;
+                                }
+                                &.active {
+                                    background-color: $main-color;
+                                    color: $white-color;
+                                    margin-bottom: 10px;
+                                    &:hover {
+                                        background-color: $main-color !important;
+                                    }
+                                }
+                                padding: 10px 20px;
+                                border-radius: 10px;
+                                font-size: 16px;
+                                color: $black-color;
+                                @include centering;
+                                justify-content: flex-start;
+                                gap: 7px;
+                                transition: 0.3s ease;
+                                i,
+                                svg {
+                                    font-size: 14px;
+                                }
+                                .holder-name {
+                                    @include centering;
+                                    justify-content: flex-start;
+                                    gap: 7px;
+                                }
+                                &.nav-arrow {
+                                    justify-content: space-between;
+                                    .arrow {
+                                        transition: 0.4s ease;
+                                    }
+                                    &[aria-expanded="true"] {
+                                        .arrow {
+                                            transform: rotate(180deg);
+                                        }
+                                    }
+                                }
+                            }
+                            .sub-menu {
+                                border-right: 1px solid #000000;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .image-holder {
+            a {
+                position: relative;
+                span {
+                    position: absolute;
+                    right: -6px;
+                    top: -2px;
+                    background: #d56363;
+                    border: 2px solid #fbfbfb;
+                    @include circle(17px);
+                    @include centering;
+                }
+            }
+        }
+    }
+}
+
+.header {
+    position: relative;
+    top: 0;
+    height: 65.5px;
+    left: 0;
+    width: 100%;
+    z-index: 11;
+    background-color: $white-color;
+    transition: $main-transition;
+    border-bottom: 1px solid #efeff0;
+    @include maxWidth(sm) {
+        position: fixed !important;
+        bottom: 0;
+        top: auto;
+        border-top: 1px solid #efeff0;
+        .main-nav {
+            .nav-menu {
+                justify-content: space-around !important;
+                .nav-item {
+                    .nav-link {
+                        padding: 6px 11px !important;
+                    }
+                }
+            }
+        }
+    }
+    .main-nav {
+        .nav-menu {
+            @include centering;
+            align-items: flex-start;
+            flex-grow: 1;
+            .nav-item {
+                .nav-link {
+                    @include centering;
+                    display: inline-flex;
+                    flex-direction: column;
+                    gap: 3px;
+                    padding: 14px 16px;
+                    color: $light-gray;
+                    transition: $main-transition;
+                    .nav-icon {
+                        font-size: 18px;
+                    }
+                    &.active {
+                        .nav-icon,
+                        .nav-name {
+                            color: $main-color;
+                        }
+                    }
+                    .nav-name {
+                        font-weight: 500;
+                        font-size: 13px;
+                    }
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+.text-main-color {
+    color: $main-color;
+}
+.py-60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.row-gap-24 {
+    row-gap: 24px;
+}
+
+// set helpers width
+.w-55 {
+    width: 55%;
+}
+.w-60 {
+    width: 60%;
+}
+.w-100px {
+    width: 100px;
+}
+.w-110px {
+    width: 110px;
+}
+.w-120px {
+    width: 120px !important;
+}
+.w-150px {
+    width: 150px;
+}
+.w-170px {
+    width: 170px;
+}
+.w-180px {
+    width: 180px !important;
+}
+.w-200px {
+    width: 200px;
+}
+.w-250px {
+    width: 250px !important;
+}
+.w-fit {
+    width: fit-content !important;
+}
+// set special col
+@media (min-width: 1200px) {
+    .special-col {
+        flex: 0 0 auto !important;
+        width: 14.666667% !important;
+    }
+    .special-medal-col {
+        flex: 0 0 auto;
+        width: 52%;
+    }
+}
+
+.fs-10px {
+    font-size: 10px;
+}
+.fs-11px {
+    font-size: 11px;
+}
+.fs-12px {
+    font-size: 12px !important;
+}
+.fs-13px {
+    font-size: 13px !important;
+}
+.fs-14px {
+    font-size: 14px !important;
+}
+.fs-15px {
+    font-size: 15px !important;
+}
+.fs-18px {
+    font-size: 18px !important;
+}
+.fs-17px {
+    font-size: 17px;
+}
+
+.v-center {
+    vertical-align: middle;
+}
+
+// custom some different element in mobile screen
+@include maxWidth(xs) {
+    .sw-100 {
+        width: 100% !important;
+    }
+    .section-mobile {
+        padding-top: calc(75px + 1rem) !important;
+        padding-bottom: calc(65.5px + 2rem) !important;
+    }
+}
+// custom some different element in tablet screen
+@include maxWidth(lg) {
+    .lw-100 {
+        width: 100% !important;
+    }
+}

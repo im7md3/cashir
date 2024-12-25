@@ -1,0 +1,130 @@
+body {
+    direction: ltr !important;
+}
+
+.boxes-info {
+    .box-info {
+        .bg-icon {
+            left: -3% !important;
+        }
+    }
+}
+
+.ms-2 {
+    margin-right: 0.5rem !important;
+}
+
+.me-2 {
+    margin-left: 0.5rem!important;
+}
+
+.ms-1 {
+    margin-right: 0.25rem!important;
+}
+
+.main-list-group {
+    .list-group-item {
+        .badge-count {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            left: auto;
+        }
+    }
+}
+
+
+.addPatient-section .addPatient-content .Patient-form-data .medical-information .more-info {
+    display: flex !important;
+}
+
+.addPatient-section .addPatient-content .Patient-form-data .medical-information .more-info::after {
+    float: right !important;
+    right: 15px !important;
+    left: auto !important;
+}
+
+.bottom-nav .container .list-item li .item .badge-count {
+    left: auto !important;
+    right: 0px !important;
+}
+
+.me-1 {
+    margin-left: 0.25rem!important;
+}
+
+.text-end {
+    text-align: left!important;
+}
+
+.ms-md-2 {
+    margin-right: 0.5rem!important;
+}
+
+.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-right: -1px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.box-report {
+    p {
+        @media (min-width: 1200px) {
+            margin-left: 0px !important;
+            margin-right: 20px !important;
+        }
+    }
+}
+
+
+.status_box {
+    &.blue-box {
+        background-color: #17a2b8;
+    }
+    &.success-box {
+        background-color: #28a745;
+    }
+    &.danger-box {
+        background-color: #dc3545;
+    }
+    &.warning-box {
+        background-color: #ffc107;
+    }
+    position: relative;
+    color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+    &:hover .icon {
+        > svg {
+            transform: scale(1.1);
+        }
+    }
+    .icon {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        left: auto;
+        > svg {
+            font-size: 50px;
+            transition: transform 0.5s;
+        }
+    }
+    .more {
+        position: relative;
+        display: block;
+        text-align: center;
+        padding: 5px 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        color: #fff;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+    }
+}
